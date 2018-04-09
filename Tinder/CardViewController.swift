@@ -30,13 +30,29 @@ class CardViewController: UIViewController {
     let location = sender.location(in: view)
     let velocity = sender.velocity(in: view)
     let translation = sender.translation(in: view)
-    //cardImageView.transform = cardImageView.transform.rotated(by:location)
+    
     
     if sender.state == .began {
       cardInitialCenter = cardImageView.center
+      print(location.x)
+      if translation.x > 0 {
+        cardImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double(translation.x) * M_PI / 180))
+        //cardImageView.transform = CGAffineTransform(rotationAngle: CGFloat(translation.x/2))
+      }
+      else {
+        cardImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double(translation.x) * M_PI / 180))
+      }
     }
     else if sender.state == .changed {
-      cardImageView.center = CGPoint(x: cardInitialCenter.x + translation.x, y: cardInitialCenter.y + translation.y)
+      if translation.x > 0 {
+        cardImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double(translation.x) * M_PI / 180))
+        //cardImageView.transform = CGAffineTransform(rotationAngle: CGFloat(translation.x/2))
+      }
+      else {
+        cardImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double(translation.x) * M_PI / 180))
+      }
+      cardImageView.center = CGPoint(x: cardInitialCenter.x + translation.x, y: cardInitialCenter.y)
+      print(location.x)
     }
   }
   
