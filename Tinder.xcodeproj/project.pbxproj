@@ -14,6 +14,7 @@
 		E7969A522075D6F100A2C328 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7969A502075D6F100A2C328 /* LaunchScreen.storyboard */; };
 		E7969A5D2075D6F100A2C328 /* TinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7969A5C2075D6F100A2C328 /* TinderTests.swift */; };
 		E7969A682075D6F100A2C328 /* TinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7969A672075D6F100A2C328 /* TinderUITests.swift */; };
+		E7DD51A720774A2F00C5FA95 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DD51A620774A2F00C5FA95 /* CardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		E7969A632075D6F100A2C328 /* TinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7969A672075D6F100A2C328 /* TinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderUITests.swift; sourceTree = "<group>"; };
 		E7969A692075D6F100A2C328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7DD51A620774A2F00C5FA95 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				E7969A4E2075D6F100A2C328 /* Assets.xcassets */,
 				E7969A502075D6F100A2C328 /* LaunchScreen.storyboard */,
 				E7969A532075D6F100A2C328 /* Info.plist */,
+				E7DD51A620774A2F00C5FA95 /* CardViewController.swift */,
 			);
 			path = Tinder;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			files = (
 				E7969A4A2075D6E800A2C328 /* ViewController.swift in Sources */,
 				E7969A482075D6E800A2C328 /* AppDelegate.swift in Sources */,
+				E7DD51A720774A2F00C5FA95 /* CardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
