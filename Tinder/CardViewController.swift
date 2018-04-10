@@ -17,13 +17,17 @@ class CardViewController: UIViewController {
   override func viewDidLoad() {
     
     let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPanImage(sender:)))
-    
+    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapImage(sender:)))
     cardImageView.isUserInteractionEnabled = true
     cardImageView.addGestureRecognizer(panGestureRecognizer)
-    
+    cardImageView.image = UIImage(named: "ChuckNorris.jpg")
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
+  }
+  
+  @objc func didTapImage(sender: UITapGestureRecognizer) {
+    
   }
   
   @objc func didPanImage(sender: UIPanGestureRecognizer) {
@@ -63,11 +67,18 @@ class CardViewController: UIViewController {
       else {
         UIView.animate(withDuration: 0.2, delay: 0.0, options: [], animations: { () -> Void in
           self.cardImageView.transform = CGAffineTransform.identity
+          self.cardImageView.center = self.cardInitialCenter
         }, completion: nil)
       }
     }
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    let profileViewController = segue.destination as! ProfileViewController
+    profileViewController.mainImage = cardImageView.image
+    
+  }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()

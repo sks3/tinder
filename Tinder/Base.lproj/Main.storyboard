@@ -18,22 +18,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nav_bar" translatesAutoresizingMaskIntoConstraints="NO" id="RRw-xN-2sF">
-                                <rect key="frame" x="0.0" y="0.0" width="374" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_bar" translatesAutoresizingMaskIntoConstraints="NO" id="RRw-xN-2sF">
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="65"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="action_buttons" translatesAutoresizingMaskIntoConstraints="NO" id="P3P-EA-gpu">
-                                <rect key="frame" x="0.0" y="542" width="375" height="125"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="action_buttons" translatesAutoresizingMaskIntoConstraints="NO" id="P3P-EA-gpu">
+                                <rect key="frame" x="0.0" y="559" width="375" height="108"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v9t-Nc-w1H">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v9t-Nc-w1H">
                                 <rect key="frame" x="29" y="168" width="317" height="278"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.72855572530000001" green="0.94376586289999997" blue="0.85243302970000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="278" id="Fxp-zc-hqJ"/>
+                                    <constraint firstAttribute="width" constant="317" id="Itp-cE-hzC"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fC1-kZ-mAL" appends="YES" id="H0t-3g-A6j"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="P3P-EA-gpu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="0lu-jt-cDP"/>
+                            <constraint firstItem="RRw-xN-2sF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6a2-sR-QxH"/>
+                            <constraint firstItem="v9t-Nc-w1H" firstAttribute="top" secondItem="RRw-xN-2sF" secondAttribute="bottom" constant="103" id="FlS-th-csT"/>
+                            <constraint firstItem="RRw-xN-2sF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="M6c-uc-Y4q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v9t-Nc-w1H" secondAttribute="trailing" constant="29" id="Nvv-NF-hDB"/>
+                            <constraint firstItem="P3P-EA-gpu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QxJ-Zc-zwo"/>
+                            <constraint firstItem="v9t-Nc-w1H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W6U-ry-UAz"/>
+                            <constraint firstItem="P3P-EA-gpu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aQM-7m-t8P"/>
+                            <constraint firstItem="v9t-Nc-w1H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="oSf-nO-gh8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RRw-xN-2sF" secondAttribute="trailing" constant="1" id="sPo-cj-SqZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -41,12 +57,65 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fC1-kZ-mAL">
+                    <connections>
+                        <segue destination="HKZ-Xi-b3H" kind="presentation" id="zRJ-sQ-NN3"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+            <point key="canvasLocation" x="-199" y="118"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="DrG-Yw-cgD">
+            <objects>
+                <viewController id="HKZ-Xi-b3H" customClass="ProfileViewController" customModule="Tinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oLs-p6-1U3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F6M-P0-FfS">
+                                <rect key="frame" x="25" y="154" width="325" height="297"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="297" id="539-IZ-Icl"/>
+                                    <constraint firstAttribute="width" constant="325" id="Qtg-Ik-ePg"/>
+                                </constraints>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="nav_bar2" translatesAutoresizingMaskIntoConstraints="NO" id="U1w-xx-jRG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Kul-ug-vqG" appends="YES" id="Npt-ed-GQv"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="F6M-P0-FfS" firstAttribute="leading" secondItem="GYW-9c-9On" secondAttribute="leading" constant="25" id="5Ou-uI-5wZ"/>
+                            <constraint firstItem="U1w-xx-jRG" firstAttribute="leading" secondItem="GYW-9c-9On" secondAttribute="leading" id="V8j-Zv-Qrg"/>
+                            <constraint firstItem="U1w-xx-jRG" firstAttribute="top" secondItem="oLs-p6-1U3" secondAttribute="top" id="aef-lu-SHO"/>
+                            <constraint firstItem="U1w-xx-jRG" firstAttribute="trailing" secondItem="GYW-9c-9On" secondAttribute="trailing" id="b3A-6H-tFb"/>
+                            <constraint firstItem="F6M-P0-FfS" firstAttribute="top" secondItem="U1w-xx-jRG" secondAttribute="bottom" constant="89" id="mZs-u5-uUB"/>
+                            <constraint firstItem="GYW-9c-9On" firstAttribute="trailing" secondItem="F6M-P0-FfS" secondAttribute="trailing" constant="25" id="pWZ-3i-3wY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GYW-9c-9On"/>
+                    </view>
+                    <connections>
+                        <outlet property="profileImage" destination="F6M-P0-FfS" id="4sa-uF-wbH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cpt-ez-yrs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Kul-ug-vqG">
+                    <connections>
+                        <action selector="didClickDone:" destination="HKZ-Xi-b3H" id="8Ow-gL-anM"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="544.79999999999995" y="117.39130434782609"/>
         </scene>
     </scenes>
     <resources>
         <image name="action_buttons" width="320" height="108"/>
         <image name="nav_bar" width="320" height="65"/>
+        <image name="nav_bar2" width="320" height="65"/>
     </resources>
 </document>
